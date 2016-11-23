@@ -13,10 +13,13 @@
 <body>
 <%
     HttpSession sessionExist = request.getSession(false);
-    if (sessionExist != null){
-        out.print("dajsmflkdsjglksdjglksdjfglksd");
+    sessionExist.setAttribute("user", "dakd;sadk;");
+    if (sessionExist != null || sessionExist.equals(request.getSession(true))){
+        out.println("dajsmflkdsjglksdjglksdjfglksd");
+        out.println(sessionExist.equals(request.getSession(true)));
+    } else {
+        out.print("!!!!!!!!!!!!!!!!!!!");
     }
-    out.print("!!!!!!!!!!!!!!!!!!!");
 %>
 <form action="/" method="post">
     <div>

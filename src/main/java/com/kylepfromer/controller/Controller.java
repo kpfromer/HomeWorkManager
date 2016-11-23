@@ -42,7 +42,7 @@ public class Controller extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         PrintWriter out = response.getWriter();
         out.println(request.getParameter("user_name"));
-//        HttpSession session = request.getSession();
+        HttpSession session = request.getSession();
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
@@ -55,7 +55,7 @@ public class Controller extends javax.servlet.http.HttpServlet {
                 request.getRequestDispatcher(pageLayout.get("index")).forward(request, response);
             }
         } else {
-//            request.setAttribute("todo", "10");
+            request.setAttribute("todo", "10");
             request.getRequestDispatcher(pageLayout.get("index")).forward(request, response);
         }
 
