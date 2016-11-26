@@ -12,5 +12,18 @@
 </head>
 <body>
 login
+<form action="/?action=login" method="post">
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="user_name"/>
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="user_password"/>
+    </div>
+    <div class="button">
+        <button type="submit" value="Submit">Sumbit</button>
+    </div>
+</form>
 </body>
 </html>

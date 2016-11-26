@@ -1,0 +1,11 @@
+.gradle/
+.idea/dataSources.local.xml
+.idea/dataSources/
+.idea/vcs.xml
+.idea/workspace.xml
+build/
+lib/mysql-connector-java-5.1.40-bin.jar
+out/
+src/test/
+web/
+/src/main/resources/settings.properties

@@ -11,17 +11,17 @@
     <title>Signup</title>
 </head>
 <body>
-<%
-    HttpSession sessionExist = request.getSession(false);
-    sessionExist.setAttribute("user", "dakd;sadk;");
-    if (sessionExist != null || sessionExist.equals(request.getSession(true))){
-        out.println("dajsmflkdsjglksdjglksdjfglksd");
-        out.println(sessionExist.equals(request.getSession(true)));
-    } else {
-        out.print("!!!!!!!!!!!!!!!!!!!");
-    }
-%>
-<form action="/" method="post">
+<%--<%--%>
+<%--HttpSession sessionExist = request.getSession(false);--%>
+<%--sessionExist.setAttribute("user", "dakd;sadk;");--%>
+<%--if (sessionExist != null || sessionExist.equals(request.getSession(true))){--%>
+<%--out.println("dajsmflkdsjglksdjglksdjfglksd");--%>
+<%--out.println(sessionExist.equals(request.getSession(true)));--%>
+<%--} else {--%>
+<%--out.print("!!!!!!!!!!!!!!!!!!!");--%>
+<%--}--%>
+<%--%>--%>
+<form action="/?action=signup" method="post">
     <div>
         <label for="username">Username:</label>
         <input type="text" id="username" name="user_name" />
