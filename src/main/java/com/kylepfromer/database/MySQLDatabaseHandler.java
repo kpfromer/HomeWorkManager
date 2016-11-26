@@ -1,7 +1,7 @@
 package com.kylepfromer.database;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Properties;
@@ -16,8 +16,10 @@ public class MySQLDatabaseHandler {
         Connection connection = null;
         try {
             try {
+
                 ClassLoader classLoader = MySQLDatabaseHandler.class.getClassLoader();
-                InputStream input = classLoader.getResourceAsStream("settings.properties");
+                //todo: have better system to get external properties file!
+                FileInputStream input = new FileInputStream("/opt/config/settings.properties");
 
                 Properties properties = new Properties();
                 properties.load(input);

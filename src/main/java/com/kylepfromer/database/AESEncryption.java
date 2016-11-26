@@ -3,8 +3,8 @@ package com.kylepfromer.database;
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
@@ -33,7 +33,8 @@ public class AESEncryption {
 //        return secKey;
 
         ClassLoader classLoader = AESEncryption.class.getClassLoader();
-        InputStream input = classLoader.getResourceAsStream("settings.properties");
+        //todo: have better system to get external properties file!
+        FileInputStream input = new FileInputStream("/opt/config/settings.properties");
 
 //        String text = brTest.readLine();
 
@@ -46,7 +47,6 @@ public class AESEncryption {
         /* Constructs a secret key from the given byte array */
         SecretKey secretKey = new SecretKeySpec(decodedKey, 0,
                 decodedKey.length, "AES");
-
         return secretKey;
     }
 
