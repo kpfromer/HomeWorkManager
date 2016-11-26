@@ -88,7 +88,11 @@ public class Account {
 
 
     public void destroy() throws SQLException {
-        connection.close();
+        try {
+            connection.close();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 
 
