@@ -11,3 +11,4 @@ out/
 src/test/
 web/
 /src/main/resources/settings.properties
+src/main/resources/
