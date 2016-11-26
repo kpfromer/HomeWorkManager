@@ -93,22 +93,6 @@ public class Controller extends javax.servlet.http.HttpServlet {
             } else {
                 response.sendRedirect("/?action=login");
             }
-
-//            String plainText = "Hello World";
-//            try {
-//                SecretKey secKey = getSecretEncryptionKey();
-//                byte[] cipherText = encryptText(plainText, secKey);
-//                String decryptedText = decryptText(cipherText, secKey);
-//
-//                out.println("Original Text:" + plainText);
-//                out.println("AES Key (Hex Form):"+ AESEncryption.bytesToHex(secKey.getEncoded()));
-//                out.println("Encrypted Text (Hex Form):"+AESEncryption.bytesToHex(cipherText));
-//                out.println("Descrypted Text:"+decryptedText);
-//            }
-//            catch (Exception e){
-//                e.printStackTrace();
-//            }
-
         }
     }
 
