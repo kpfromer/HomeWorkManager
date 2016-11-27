@@ -2,6 +2,7 @@ package com.kylepfromer.database;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.util.Properties;
 
@@ -13,7 +14,6 @@ public class MySQLDatabaseHandler {
     public static Connection getConnection() {
         //todo: better error handling
         Connection connection = null;
-        try {
             try {
 
                 //todo: have better system to get external properties file!
@@ -29,11 +29,11 @@ public class MySQLDatabaseHandler {
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
                 throw new RuntimeException("No Database Connection Details");
+            } catch (IOException e) {
+                e.printStackTrace();
+                throw new RuntimeException("No Database Connection Details");
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return connection;
+        //return connection;
 
     }
 }
