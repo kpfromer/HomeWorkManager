@@ -28,6 +28,7 @@ public class MySQLDatabaseHandler {
                 connection = DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("login"), properties.getProperty("password"));
                 input.close();
             } catch (FileNotFoundException e) {
+                //todo: better error handling
                 e.printStackTrace();
                 throw new RuntimeException("No Database Connection Details");
             } catch (IOException e) {

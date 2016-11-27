@@ -6,7 +6,6 @@
 .idea/vcs.xml
 .idea/workspace.xml
 build/
-lib/mysql-connector-java-5.1.40-bin.jar
 out/
 src/test/
 web/
