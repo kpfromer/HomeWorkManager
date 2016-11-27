@@ -29,6 +29,9 @@ public class Controller extends javax.servlet.http.HttpServlet {
     {
         //Database Setup
         connection = MySQLDatabaseHandler.getConnection();
+        if (connection == null) {
+            throw new RuntimeException("Null Connection");
+        }
         account = new Account(connection);
 
         //Page Setup
