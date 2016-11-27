@@ -3,7 +3,6 @@ package com.kylepfromer.database;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.util.Properties;
 
 /**
@@ -17,16 +16,16 @@ public class MySQLDatabaseHandler {
         try {
             try {
 
-                ClassLoader classLoader = MySQLDatabaseHandler.class.getClassLoader();
                 //todo: have better system to get external properties file!
                 FileInputStream input = new FileInputStream("/opt/config/settings.properties");
 
                 Properties properties = new Properties();
                 properties.load(input);
+                throw new RuntimeException(properties.getProperty("url"));
 
-                Class.forName("com.mysql.jdbc.Driver");
-                connection = DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("login"), properties.getProperty("password"));
-                input.close();
+//                Class.forName("com.mysql.jdbc.Driver");
+//                connection = DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("login"), properties.getProperty("password"));
+//                input.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
                 throw new RuntimeException("No Database Connection Details");
