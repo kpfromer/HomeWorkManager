@@ -35,8 +35,10 @@ public class MySQLDatabaseHandler {
                 throw new RuntimeException("No Database Connection Details");
             } catch (SQLException e) {
                 e.printStackTrace();
+                throw new RuntimeException("No Database Connection Details");
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
+                throw new RuntimeException("No Database Connection Details");
             }
         return connection;
     }
