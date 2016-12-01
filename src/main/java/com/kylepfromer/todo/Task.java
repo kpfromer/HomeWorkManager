@@ -7,26 +7,38 @@ import java.time.LocalDate;
  */
 
 public class Task implements Comparable {
+
+    //Main variables for functionality
     private String mText;
     private LocalDate mDueDate;
     private SchoolClass mSchoolClass;
+    //Used for editing task in database
+    private long mID;
 
-    public Task(String text, LocalDate duedate, SchoolClass schoolclass) {
+    //Other variables for displaying
+    private int mPosition;
+    private boolean mDone;
+
+
+    public Task(String text, LocalDate duedate, SchoolClass schoolclass, long ID, int position, boolean done) {
         this.mText = TextParser.cleanText(text);
         this.mDueDate = duedate;
         this.mSchoolClass = schoolclass;
+        this.mID = ID;
+        this.mPosition = position;
+        this.mDone = done;
     }
 
-    public Task(String text, LocalDate duedate) {
-        this(text, duedate, (SchoolClass) null);
+    public Task(String text, LocalDate duedate, long ID, int position) {
+        this(text, duedate, null, ID, position, false);
     }
 
-    public Task(String text, SchoolClass schoolclass) {
-        this(TextParser.removeDayTextFromString(text), TextParser.getLocalDateFromString(text), schoolclass);
+    public Task(String text, SchoolClass schoolclass, long ID, int position) {
+        this(TextParser.removeDayTextFromString(text), TextParser.getLocalDateFromString(text), schoolclass, ID, position, false);
     }
 
-    public Task(String text) {
-        this(TextParser.removeSchoolClassFromString(TextParser.removeDayTextFromString(text)), TextParser.getLocalDateFromString(text), TextParser.getSchoolClassFromString(text));
+    public Task(String text, long ID, int position) {
+        this(TextParser.removeSchoolClassFromString(TextParser.removeDayTextFromString(text)), TextParser.getLocalDateFromString(text), TextParser.getSchoolClassFromString(text), ID, position, false);
     }
 
     //Used to sort tasks by date
@@ -48,6 +60,9 @@ public class Task implements Comparable {
         this.mText = mText;
     }
 
+    public SchoolClass getmSchoolClass() {
+        return mSchoolClass;
+    }
 
     public LocalDate getmDueDate() {
         return this.mDueDate;

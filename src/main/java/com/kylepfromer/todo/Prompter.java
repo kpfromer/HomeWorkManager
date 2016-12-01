@@ -5,6 +5,7 @@ package com.kylepfromer.todo;
  */
 
 public class Prompter {
+    //Todo: Need to make it user specific
     public static final SchoolClass PERIOD_ONE = new SchoolClass("PE", 0, "8:05-8:55", "Mrs. Roetto", "becky.roetto@bvsd.org", "https://sites.google.com/a/bvsd.org/fairview-pe/home");
     public static final SchoolClass PERIOD_TWO = new SchoolClass("Science", 1, "9:00-9:50", "Mr. Muzny", "dylan.muzny@bvsd.org", "https://www.fairviewhs.org/staff/dylan-muzny/classes/pib-biology");
     public static final SchoolClass PERIOD_THREE = new SchoolClass("World History", 2, "9:55-10:45", "Mr. McCarthy", "daniel.mccarthy@bvsd.org", "https://www.fairviewhs.org/staff/daniel-mccarthy/classes/world-history");
