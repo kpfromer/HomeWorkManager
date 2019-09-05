@@ -1,4 +1,4 @@
-#Homework Manager
+# Homework Manager
 This a website that acts as a todo list site and sends you reminds of due homework.
 I used a mysql database and a tomcat server. 
 
